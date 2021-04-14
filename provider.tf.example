@@ -1,0 +1,9 @@
+
+provider "vsphere" {
+  user           = "username"
+  password       = "password"
+  vsphere_server = "vsphere_fqdn_or_ip"
+
+  # If you have a self-signed cert
+  allow_unverified_ssl = true
+}
