@@ -2,7 +2,7 @@
 Kubespray and terraform examples for setup
 
 Prerequisites:</br>
-Terraform (v0.13.5+)</br>
+Terraform (v0.13.5)</br>
 Ansible (2.9.14) *Kubespray specific for me</br>
 Python (3.6.9) *Kubespray specific for me</br>
 vSphere Provider + vCenter Endpoint(7.0+)</br>
