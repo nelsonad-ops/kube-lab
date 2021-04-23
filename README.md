@@ -17,12 +17,13 @@ Installation:
 3. Customize provider.tf from the example to your environment admin credentials.
 4. Customize cluster.tf to define your vSphere specific environment settings for network, storage, cluster, resource pool.
 5. Customize inventory.ini to match your number and IP addresses of VMs.
-6. ```Terraform plan``` to ensure syntax and compatibility from this kube-lab directory
-7. ```Terraform apply``` to create VMs
-8. SSH and ensure VMs are ready to go. Switch to your kubespray directory and ensure your file-path references your inventory.ini accurately.
-9. ```ansible-playbook -i kube-lab/inventory.ini -b -v --ask-become-pass --ask-pass -c paramiko cluster.yml``` For me this takes ~45 minutes to complete.
-10. ```ansible-playbook -i kube-lab/inventory.ini -b -v --ask-become-pass --ask-pass -c paramiko get-me-keys.yaml```
-11. ```mv config.dev-0 ~/.kube/config``` Filename of the config should match your vm_name.
-12. ```kubectl get nodes```
+6. ```terraform init``` to setup your plugins and get the directory ready.
+7. ```terraform plan``` to ensure syntax and compatibility from this kube-lab directory
+8. ```terraform apply``` to create VMs
+9. SSH and ensure VMs are ready to go. Switch to your kubespray directory and ensure your file-path references your inventory.ini accurately.
+10. ```ansible-playbook -i kube-lab/inventory.ini -b -v --ask-become-pass --ask-pass -c paramiko cluster.yml``` For me this takes ~45 minutes to complete.
+11. ```ansible-playbook -i kube-lab/inventory.ini -b -v --ask-become-pass --ask-pass -c paramiko get-me-keys.yaml```
+12. ```mv config.dev-0 ~/.kube/config``` Filename of the config should match your vm_name.
+13. ```kubectl get nodes```
 
 Your cluster should be ready to go!
