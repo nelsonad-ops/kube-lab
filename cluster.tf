@@ -49,21 +49,21 @@ resource "vsphere_virtual_machine" "k8s" {
   }
 
   disk {
-    label            = "disk0"
+    label            = "dev-${count.index}_disk_0.vmdk"
     size             = data.vsphere_virtual_machine.template.disks.0.size
     eagerly_scrub    = data.vsphere_virtual_machine.template.disks.0.eagerly_scrub
     thin_provisioned = data.vsphere_virtual_machine.template.disks.0.thin_provisioned
   }
 
   disk {
-    name             = "dev-${count.index}_disk_2.vmdk"
+    label            = "dev-${count.index}_disk_1.vmdk"
     size             = data.vsphere_virtual_machine.template.disks.1.size
     eagerly_scrub    = data.vsphere_virtual_machine.template.disks.1.eagerly_scrub
     thin_provisioned = data.vsphere_virtual_machine.template.disks.1.thin_provisioned
     unit_number = 1
   }
   disk {
-    name             = "dev-${count.index}_disk_3.vmdk"
+    label            = "dev-${count.index}_disk_2.vmdk"
     size             = data.vsphere_virtual_machine.template.disks.2.size
     eagerly_scrub    = data.vsphere_virtual_machine.template.disks.2.eagerly_scrub
     thin_provisioned = data.vsphere_virtual_machine.template.disks.2.thin_provisioned
